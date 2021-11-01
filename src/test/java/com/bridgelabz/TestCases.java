@@ -51,6 +51,7 @@ public class TestCases {
         Length feet = new Length(Length.Unit.FEET, 0.0);
         Assert.assertEquals(feet, new Length(Length.Unit.INCH, 0.0));
     }
+
     @Test
     public void whenGiven1FeetAnd1Yard_shouldReturnNotEquals() {
         Length feet = new Length(Length.Unit.FEET, 1.0);
@@ -62,6 +63,7 @@ public class TestCases {
         Length feet = new Length(Length.Unit.FEET, 3.0);
         Assert.assertEquals(feet, new Length(Length.Unit.YARD, 1.0));
     }
+
     @Test
     public void whenGiven1InchAnd1Yard_shouldReturnNotEquals() {
         Length inch = new Length(Length.Unit.INCH, 1.0);
@@ -85,6 +87,7 @@ public class TestCases {
         Length yard = new Length(Length.Unit.YARD, 1.0);
         Assert.assertEquals(yard, new Length(Length.Unit.FEET, 3.0));
     }
+
     @Test
     public void whenGiven2InchAnd5Centimeter_shouldReturnEquals() {
         Length centimeter = new Length(Length.Unit.CENTIMETER, 5);
