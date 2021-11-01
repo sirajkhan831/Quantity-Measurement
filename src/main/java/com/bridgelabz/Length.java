@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /**
  * @author -> Siraj Khan
+ * @version -> 1.0
  */
 public class Length {
 
@@ -25,10 +26,10 @@ public class Length {
     /**
      * @return -> returns converted value
      * @value -> 1Feet=12Inch 1Yard=36Inch 1Cm=0.4Inch
-     * This method is converting all the values to Inch
+     * This method converts all the given values to Inch
      */
     public double value() {
-        HashMap<Unit, Double> conversionTable = new HashMap<>();
+        HashMap<Unit, Double> conversionTable = new HashMap<>();        // Used for storing all the static conversion values
         conversionTable.put(Unit.FEET, 12 * number);
         conversionTable.put(Unit.YARD, 36 * number);
         conversionTable.put(Unit.INCH, 1 * number);
@@ -40,7 +41,7 @@ public class Length {
      * Overriding the equals method to make sure only one object exists of same value
      *
      * @param o -> Object
-     * @return -> Returns boolean value by comparing objects
+     * @return -> Returns boolean value by comparing objects | if true -> Similar Object already exists.
      */
     @Override
     public boolean equals(Object o) {

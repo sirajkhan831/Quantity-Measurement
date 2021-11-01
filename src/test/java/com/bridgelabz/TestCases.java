@@ -93,4 +93,24 @@ public class TestCases {
         Length centimeter = new Length(Length.Unit.CENTIMETER, 5);
         Assert.assertEquals(centimeter, new Length(Length.Unit.INCH, 2));
     }
+
+    @Test
+    public void whenGivenTwoInchValues_whenAdded_shouldReturnEqual() {
+        Length inch1 = new Length(Length.Unit.INCH, 2);
+        Length inch2 = new Length(Length.Unit.INCH, 2);
+        Assert.assertEquals(inch1.value() + inch2.value(), 4.0, 0.1);
+    }
+
+    @Test
+    public void whenGivenInchAndFeetValues_whenAdded_shouldReturnEqual() {
+        Length feet = new Length(Length.Unit.FEET, 1);
+        Length inch = new Length(Length.Unit.INCH, 2);
+        Assert.assertEquals(inch.value() + feet.value(), 14.0, 0.5);
+    }
+    @Test
+    public void whenGivenTwoFeetValues_whenAdded_shouldReturnEqual() {
+        Length feet1 = new Length(Length.Unit.FEET, 1);
+        Length feet2 = new Length(Length.Unit.FEET, 1);
+        Assert.assertEquals(feet2.value() + feet1.value(), 24.0, 0.5);
+    }
 }
