@@ -85,4 +85,9 @@ public class TestCases {
         Length yard = new Length(Length.Unit.YARD, 1.0);
         Assert.assertEquals(yard, new Length(Length.Unit.FEET, 3.0));
     }
+    @Test
+    public void whenGiven2InchAnd5Centimeter_shouldReturnEquals() {
+        Length centimeter = new Length(Length.Unit.CENTIMETER, 5);
+        Assert.assertEquals(centimeter, new Length(Length.Unit.INCH, 2));
+    }
 }
