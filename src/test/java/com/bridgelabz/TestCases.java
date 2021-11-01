@@ -147,4 +147,16 @@ public class TestCases {
         Volume millilitre = new Volume(Volume.Unit.MILLILITRES, 1000);
         Assert.assertEquals(litre.value() + millilitre.value(), 2, 0.1);
     }
+
+    @Test
+    public void whenGivenMilligramAndKilogram_shouldReturnEqual() {
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, 1);
+        Assert.assertEquals(kg, new Weight(Weight.Unit.MILLIGRAM, 1000));
+    }
+
+    @Test
+    public void whenGivenTonneAndKilogram_shouldReturnEqual() {
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, 1000);
+        Assert.assertEquals(kg, new Weight(Weight.Unit.TONNE, 1));
+    }
 }
