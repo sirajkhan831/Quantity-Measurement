@@ -121,4 +121,15 @@ public class TestCases {
         Length inch = new Length(Length.Unit.INCH, 2);
         Assert.assertEquals(inch.value() + centimeter.value(), 3, 0.5);
     }
+
+    @Test
+    public void whenGivenGallonAndLitre_shouldReturnEqual() {
+        Volume gallon = new Volume(Volume.Unit.GALLONS,1);
+        Assert.assertEquals(gallon,new Volume(Volume.Unit.LITRES,3.78));
+    }
+    @Test
+    public void whenGivenMlAndLitre_shouldReturnEqual() {
+        Volume ml = new Volume(Volume.Unit.MILLILITRES,1000);
+        Assert.assertEquals(ml,new Volume(Volume.Unit.LITRES,1));
+    }
 }
