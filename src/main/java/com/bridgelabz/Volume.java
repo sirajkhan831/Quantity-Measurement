@@ -6,19 +6,19 @@ import java.util.HashMap;
  * @author -> Siraj Khan
  * @version -> 1.0
  */
-public class Length {
+public class Volume {
 
     /**
-     * This program converts all the length values to inch and vice versa
+     * This program converts all the volume values to litres and vice versa
      */
     private final Unit unit;
     private final double number;
     private final double convertedValue;
     public HashMap<Unit, Double> conversionTable = new HashMap<>();        // Used for storing all the static conversion values
 
-    enum Unit {FEET, YARD, INCH, CENTIMETER}
+    enum Unit {GALLONS, LITRES, MILLILITRES}
 
-    public Length(Unit unit, double number) {
+    public Volume(Unit unit, double number) {
         this.unit = unit;
         this.number = number;
         this.convertedValue = value();
@@ -26,14 +26,13 @@ public class Length {
 
     /**
      * @return -> returns converted value
-     * @value -> 1Feet=12Inch 1Yard=36Inch 1Cm=0.4Inch
+     * @value -> 1Gallon=3.78Litres 1Litre=1000Millilitres
      * This method converts all the given values to Inch
      */
     public double value() {
-        conversionTable.put(Unit.FEET, 12 * number);
-        conversionTable.put(Unit.YARD, 36 * number);
-        conversionTable.put(Unit.INCH, number);
-        conversionTable.put(Unit.CENTIMETER, 0.4 * number);
+        conversionTable.put(Unit.GALLONS, number * 3.78);
+        conversionTable.put(Unit.LITRES, number);
+        conversionTable.put(Unit.MILLILITRES, number / 1000.0);
         return conversionTable.get(unit);
     }
 
@@ -47,7 +46,7 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return Double.compare(length.convertedValue, convertedValue) == 0;
+        Volume volume = (Volume) o;
+        return Double.compare(volume.convertedValue, convertedValue) == 0;
     }
 }
