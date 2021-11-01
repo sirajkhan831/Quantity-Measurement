@@ -114,4 +114,11 @@ public class TestCases {
         Length feet2 = new Length(Length.Unit.FEET, 1);
         Assert.assertEquals(feet2.value() + feet1.value(), 24.0, 0.5);
     }
+
+    @Test
+    public void whenGivenInchAndCentimeterValues_whenAdded_shouldReturnEqual() {
+        Length centimeter = new Length(Length.Unit.CENTIMETER, 2.5);
+        Length inch = new Length(Length.Unit.INCH, 2);
+        Assert.assertEquals(inch.value() + centimeter.value(), 3, 0.5);
+    }
 }
