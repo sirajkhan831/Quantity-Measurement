@@ -40,4 +40,16 @@ public class TestCases {
         Assert.assertEquals(inch, new Length(Length.Unit.INCH, 0.0));
     }
 
+    @Test
+    public void whenGiven2DifferentInchObjects_shouldReturnFalse() {
+        Length inch = new Length(Length.Unit.INCH, 0.0);
+        Assert.assertNotEquals(inch, new Length(Length.Unit.INCH, 1.0));
+    }
+
+    @Test
+    public void whenGiven0FeetAnd0Inch_shouldReturnEquals() {
+        Length feet = new Length(Length.Unit.FEET, 0.0);
+        Assert.assertEquals(feet, new Length(Length.Unit.INCH, 0.0));
+    }
+
 }
