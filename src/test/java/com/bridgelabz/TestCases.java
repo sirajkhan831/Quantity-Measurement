@@ -124,12 +124,13 @@ public class TestCases {
 
     @Test
     public void whenGivenGallonAndLitre_shouldReturnEqual() {
-        Volume gallon = new Volume(Volume.Unit.GALLONS,1);
-        Assert.assertEquals(gallon,new Volume(Volume.Unit.LITRES,3.78));
+        Volume gallon = new Volume(Volume.Unit.GALLONS, 1);
+        Assert.assertEquals(gallon, new Volume(Volume.Unit.LITRES, 3.78));
     }
+
     @Test
     public void whenGivenMlAndLitre_shouldReturnEqual() {
-        Volume ml = new Volume(Volume.Unit.MILLILITRES,1000);
-        Assert.assertEquals(ml,new Volume(Volume.Unit.LITRES,1));
+        Volume ml = new Volume(Volume.Unit.MILLILITRES, 1000);
+        Assert.assertEquals(ml, new Volume(Volume.Unit.LITRES, 1));
     }
 }
