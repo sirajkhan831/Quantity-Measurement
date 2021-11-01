@@ -166,4 +166,10 @@ public class TestCases {
         Weight tonne = new Weight(Weight.Unit.TONNE, 1);
         Assert.assertEquals(kg.value() + tonne.value(), 1001, 0.1);
     }
+
+    @Test
+    public void whenGivenCelsiusAndFahrenheit_shouldEqual() {
+        Temperature fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212);
+        Assert.assertEquals(fahrenheit, new Temperature(Temperature.Unit.CELSIUS, 100));
+    }
 }
