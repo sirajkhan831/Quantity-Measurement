@@ -159,4 +159,11 @@ public class TestCases {
         Weight kg = new Weight(Weight.Unit.KILOGRAM, 1000);
         Assert.assertEquals(kg, new Weight(Weight.Unit.TONNE, 1));
     }
+
+    @Test
+    public void whenGivenTonneAndKilogram_ifAdded_shouldReturnEqual() {
+        Weight kg = new Weight(Weight.Unit.MILLIGRAM, 1000);
+        Weight tonne = new Weight(Weight.Unit.TONNE, 1);
+        Assert.assertEquals(kg.value() + tonne.value(), 1001, 0.1);
+    }
 }
