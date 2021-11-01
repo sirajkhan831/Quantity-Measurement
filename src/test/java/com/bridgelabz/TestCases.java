@@ -51,5 +51,15 @@ public class TestCases {
         Length feet = new Length(Length.Unit.FEET, 0.0);
         Assert.assertEquals(feet, new Length(Length.Unit.INCH, 0.0));
     }
+    @Test
+    public void whenGiven1FeetAnd1Yard_shouldReturnNotEquals() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Assert.assertNotEquals(feet, new Length(Length.Unit.YARD, 1.0));
+    }
 
+    @Test
+    public void whenGiven3FeetAnd1Yard_shouldReturnEquals() {
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        Assert.assertEquals(feet, new Length(Length.Unit.YARD, 1.0));
+    }
 }
